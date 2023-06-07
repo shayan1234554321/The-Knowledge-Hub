@@ -1,24 +1,124 @@
-# README
+# 📗 Table of Contents
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Usage](#usage)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-Things you may want to cover:
+# 📰 The Knowledge Hub <a name="about-project"></a>
 
-* Ruby version
+> A fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-* System dependencies
+## 🛠 Built With <a name="built-with"></a>
 
-* Configuration
+### Tech Stack <a name="tech-stack"></a>
 
-* Database creation
+- <a href="https://www.ruby-lang.org/es/">ROR</a>
+- <a href="https://www.postgresql.org/">Postgresql</a>
 
-* Database initialization
+### Key Features <a name="key-features"></a>
 
-* How to run the test suite
+- ORM model
+- User, Comment, Post, and like model
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-* ...
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need:
+
+- Command line or terminal
+- IDE such as VsCode.
+- Rails needs to be installed on your system.
+
+### Setup
+
+Clone this repository to your desired folder:
+Example command:
+
+```sh
+  git clone https://github.com/shayan1234554321/The-Knowledge-Hub
+
+```
+
+### Install
+
+Example command:
+
+```sh
+  bundle install (install all dependencies)
+```
+### Usage
+
+To run the project redirecting to the root directory of the project and run the following command:
+
+```sh
+ bin/rails server (to run web application)
+
+```
+
+### Test
+
+To test the web app run the following command:
+
+```sh
+ rspec spec (  to test the console application)
+
+```
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **Shayan**
+
+- GitHub: [Shayan1234554321](https://github.com/shayan1234554321)
+- Twitter: [@shayan123455432](https://twitter.com/shayan123455432)
+- LinkedIn: [Shayan Khan](https://www.linkedin.com/in/shayan-khan20/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [Validations and Model specs.]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/shayan1234554321/The-Knowledge-Hub/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## ⭐️ Show your support <a name="support"></a>
+
+Give a ⭐️ if you like this project!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to thank microverse community for the support and guidance.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
