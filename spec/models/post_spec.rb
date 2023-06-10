@@ -7,7 +7,7 @@ RSpec.describe Post, type: :model do
       @post = Post.create(author_id_id: @user.id, title: 'My Post', text: 'This is my post')
     end
 
-    it "adds comments" do
+    it 'adds comments' do
       Comment.create(author_id_id: @user.id, post_id_id: @post.id, text: 'This is my comment')
       Comment.create(author_id_id: @user.id, post_id_id: @post.id, text: 'This is my comment')
       expect(@post.recent_comments.count).to eq(2)
