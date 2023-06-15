@@ -1,1 +1,36 @@
-<h1> show post details</h1>
+<h1 class ="usersTitle"> All the details of a post from specified user </h1>
+<div class = "userProfile postDetails" >
+  <div class = "postInformation">
+    <div>
+      <h2> <%= @post.title %> by <%= @user.name %> </h2>
+      <div class = "counters">
+        <span> 
+          Comments: <%= @post.comments_counter == nil ?  0 : @post.comments_counter  %>
+        </span>
+        ,
+        <span> 
+          Likes: <%= @post.likes_counter == nil ? 0 : @post.likes_counter  %>
+        </span>
+      </div>
+    </div>
+      <p>
+        <%= @post.text %>
+      </p>
+  </div>
+  <div class= "postComments">
+    <% if Comment.where(post_id_id: @post.id).any? %>
+      <% Comment.where(post_id_id: @post.id).each do |comment| %>
+        <p>
+          <%= User.find(comment.author_id_id).name %>
+          :
+          <%= comment.text %>
+        </p>
+      <% end %>
+      <% else %>
+        <p>
+          No comments yet
+        </p>
+    <% end %>
+  </div>
+  <%= button_to 'Back to all the posts', user_posts_path, method: :get, class: 'btnPosts btnMargin'%>
+</div>

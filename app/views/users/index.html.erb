@@ -1,1 +1,18 @@
-<h1> show all users</h1>
+<h1>List of all users</h1>
+<div class= "usersAll">
+  <% @users.each do |user| %>
+    <div class= "usersContainer">
+        <div class= "usersPhotoContainer">
+        <%= image_tag user.photo , class: "usersPhoto" %>
+        </div>
+        <div class="usersNameAndPost">
+          <p class = "usersName">
+              <%= user.name %>
+          </p>
+          <p class = "usersPost" >
+              Number of posts: <%= user.posts_counter %>
+          </p>
+        </div>
+    </div>
+  <% end %>
+</div>
