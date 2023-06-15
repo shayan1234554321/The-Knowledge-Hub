@@ -13,3 +13,93 @@
  *= require_tree .
  *= require_self
  */
+
+h1 {
+  display: none;
+}
+
+.usersAll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.usersContainer {
+  display: flex;
+  gap: 20px;
+  margin: 10px;
+  margin-bottom: 30px;
+}
+
+.usersPhotoContainer {
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+}
+
+.usersNameAndPost {
+  border: 2px solid black;
+  padding: 10px;
+  font-size: 20px;
+  height: max-content;
+  width: 300px;
+}
+
+.usersPost {
+  margin-left: 80px;
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.bioContainer {
+  border: 2px solid black;
+  width: 430px;
+  padding: 10px;
+}
+
+.post {
+  border: 2px solid black;
+  width: 430px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.counters {
+    margin-left: 280px;
+}
+
+.btnPosts {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.postComments {
+    padding: 10px;
+    border: 2px solid black;
+    margin-bottom: 10px;
+}
+
+.postInformation {
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.postInformation > div{
+    display: flex;
+}
+
+.postComments {
+    width: 570px;
+    margin-top: 10px;
+}
