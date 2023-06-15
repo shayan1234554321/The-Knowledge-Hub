@@ -73,33 +73,30 @@ h1 {
 }
 
 .counters {
-    margin-left: 280px;
+  margin-left: 280px;
 }
 
 .btnPosts {
-    background-color: black;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .postComments {
-    padding: 10px;
-    border: 2px solid black;
-    margin-bottom: 10px;
+  padding: 10px;
+  border: 2px solid black;
+  margin-bottom: 10px;
+  width: 570px;
+  margin-top: 10px;
 }
 
 .postInformation {
-    border: 2px solid black;
-    padding: 10px;
+  border: 2px solid black;
+  padding: 10px;
 }
 
-.postInformation > div{
-    display: flex;
-}
-
-.postComments {
-    width: 570px;
-    margin-top: 10px;
+.postInformation > div {
+  display: flex;
 }
