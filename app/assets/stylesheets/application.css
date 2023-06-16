@@ -100,3 +100,39 @@ h1 {
 .postInformation > div {
   display: flex;
 }
+
+.createPost {
+  margin-left: 400px;
+}
+
+.createPost > button {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.createPostForm {
+  position: absolute;
+  top: 0;
+  margin-top: 300px;
+  border: 2px solid black;
+  background-color: white;
+  padding: 10px ;
+  display: none;
+  flex-direction: column;
+}
+
+.createPostForm > form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 30px;
+}
+
+.commentAndLike {
+  display: flex;
+  justify-content: space-between;
+  width: 520px;
+  margin-top: 10px;
+}

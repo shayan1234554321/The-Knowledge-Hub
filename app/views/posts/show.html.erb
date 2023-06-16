@@ -17,6 +17,16 @@
         <%= @post.text %>
       </p>
   </div>
+  <div class="commentAndLike" >
+    <%= form_with model: Comment, url: create_comment_path(user_id: @current_user.id, post_id: @post.id), method: :post do |form| %>
+      <%= form.text_field :text %>
+      <%= form.submit "Add Comment" %>
+    <% end %>
+  
+    <%= form_with model: Like, url: create_like_path(user_id: @current_user.id, post_id: @post.id), method: :post do |form| %>
+      <%= form.submit "Like post" %>
+    <% end %>
+  </div>
   <div class= "postComments">
     <% if Comment.where(post_id_id: @post.id).any? %>
       <% Comment.where(post_id_id: @post.id).each do |comment| %>
@@ -32,5 +42,6 @@
         </p>
     <% end %>
   </div>
-  <%= button_to 'Back to all the posts', user_posts_path, method: :get, class: 'btnPosts btnMargin'%>
+  
+    <%= button_to 'Back to all the posts', user_posts_path, method: :get, class: 'btnPosts btnMargin'%>
 </div>
