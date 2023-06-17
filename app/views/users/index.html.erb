@@ -1,5 +1,19 @@
 <h1>List of all users</h1>
 <div class= "usersAll">
+  <div class="createPost" >
+    <button onclick={changeCreatePost()} >New Post</button>
+  </div>
+  <div class="createPostForm" id="createPostForm">
+    <%= form_with model: Post, url: create_posts_path(user_id: @current_user.id), method: :post do |form| %>
+    <h2>Create a Post</h2>
+      <%= form.label :title, 'Title: ' %>
+      <%= form.text_field :title %>
+      <%= form.label :text, 'Content: ' %>
+      <%= form.text_field :text %>
+      <%= form.submit "Create Post" %>
+    <% end %>
+  </div>
+
   <% @users.each do |user| %>
     <div class= "usersContainer">
         <div class= "usersPhotoContainer">
@@ -14,5 +28,17 @@
           </p>
         </div>
     </div>
+
   <% end %>
 </div>
+
+<script>
+  function changeCreatePost(){
+    const createPost = document.getElementById("createPostForm")
+    if(createPost.style.display !== "flex"){
+      createPost.style.display = "flex"
+    }else{
+      createPost.style.display = "none"
+    }
+  }
+</script>
