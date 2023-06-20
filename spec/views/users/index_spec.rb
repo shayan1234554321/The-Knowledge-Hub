@@ -17,7 +17,7 @@ RSpec.describe 'User Index Page', type: :feature do
   end
 
   it 'Displays the profile picture for each user.' do
-    expect(page).to have_css("img")
+    expect(page).to have_css('img')
   end
 
   it 'Displays the number of posts each user has written.' do
@@ -32,5 +32,4 @@ RSpec.describe 'User Index Page', type: :feature do
     visit user_path(second_user)
     expect(page).to have_current_path(user_path(second_user))
   end
-  
 end
