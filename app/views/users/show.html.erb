@@ -27,7 +27,7 @@
         Post #<%= index + 1 %>
       </p>
       <p class = "postTitle">
-        <%= post.title %>
+        <%= button_to post.title , user_post_path(@user.id , post.id), method: :get %>
       </p>
       <p class = "postContent">
         <%= post.text %>

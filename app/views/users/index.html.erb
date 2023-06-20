@@ -15,7 +15,7 @@
   </div>
 
   <% @users.each do |user| %>
-    <div class= "usersContainer">
+    <div class= "usersContainer" onclick="redirectToUserShow(<%= user.id %>)" >
         <div class= "usersPhotoContainer">
         <%= image_tag user.photo , class: "usersPhoto" %>
         </div>
@@ -40,5 +40,9 @@
     }else{
       createPost.style.display = "none"
     }
+  }
+
+  function redirectToUserShow(userId) {
+    window.location.href = '/users/' + userId;
   }
 </script>
