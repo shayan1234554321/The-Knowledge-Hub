@@ -1,10 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'User Index Page', type: :feature do
-  
   before do
-    @first_user = User.create(name: 'John', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Artist from Kenya.') 
-    @second_user = User.create(name: 'Shayan', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Artist from Pakistan.')
+    @first_user = User.create(name: 'John', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                              bio: 'Artist from Kenya.')
+    @second_user = User.create(name: 'Shayan', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                               bio: 'Artist from Pakistan.')
     Post.create(author: @first_user, title: 'Hello', text: 'This is my first post')
     Post.create(author: @second_user, title: 'World of tech', text: 'This is my second post')
     visit users_path

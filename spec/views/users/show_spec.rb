@@ -37,15 +37,15 @@ RSpec.describe 'User show page', type: :feature do
     expect(page).to have_content('This is my first post')
     expect(page).to have_content('This is my second post')
     expect(page).to have_content('This is my third post')
-end
+  end
 
-it 'redirects to the post show page when clicking on a post' do
+  it 'redirects to the post show page when clicking on a post' do
     click_on first_post.title
     expect(page).to have_content('This is my first post')
   end
 
   it 'redirects to the user posts index page when clicking "View All Posts"' do
-    visit user_post_path(user.id , first_post.id)
+    visit user_post_path(user.id, first_post.id)
     click_link 'Back to all the posts'
     expect(page).to have_current_path(user_posts_path(user.id))
   end

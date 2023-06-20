@@ -1,12 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'Post Index Page', type: :feature do
-  
   before do
     @user = User.create(name: 'John', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Artist from Kenya.')
     @post = Post.create(author: @user, title: 'First post', text: 'This is my first post')
     5.times do |i|
-        Comment.create(text: "This is comment ##{i}", author_id_id: @user.id, post_id_id: @post.id)
+      Comment.create(text: "This is comment ##{i}", author_id_id: @user.id, post_id_id: @post.id)
     end
     visit user_posts_path(@user.id)
   end
@@ -36,6 +35,6 @@ RSpec.describe 'Post Index Page', type: :feature do
   end
 
   it 'displays user photo' do
-    expect(page).to have_css("img")
+    expect(page).to have_css('img')
   end
 end
