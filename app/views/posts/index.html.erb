@@ -14,7 +14,8 @@
     </div>
   </div>
     <div class = "postsContainer">
-    <% @user.posts.each do |post|%>
+    <% @user.posts.each_with_index do |post , index|%>
+      <% break if index >= 3 %>
       <div class = "postsAndComments" >
         <div class= "post">
           <h2>
@@ -45,5 +46,6 @@
       </div>
     <% end %>
     </div>
+    Page count <%= @user.posts.count >= 3 ? (@user.posts.count / 3).round + 1 : 1 %>
     <%= button_to 'Back to all the users', root_path, method: :get, class: 'btnPosts'%>
 </div>

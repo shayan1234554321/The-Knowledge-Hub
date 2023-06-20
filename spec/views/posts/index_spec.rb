@@ -37,4 +37,19 @@ RSpec.describe 'Post Index Page', type: :feature do
   it 'displays user photo' do
     expect(page).to have_css('img')
   end
+
+  it 'displays the body of each comment' do
+    expect(page).to have_content('This is comment #0')
+    expect(page).to have_content('This is comment #1')
+    expect(page).to have_content('This is comment #2')
+  end
+
+  it 'Pagination if there are more posts than fit on the view.' do
+    expect(page).to have_content('Page count 1')
+  end
+
+  it 'redirects to the post show page when clicking on a post' do
+    click_on @post.title
+    expect(page).to have_content('This is my first post')
+  end
 end
