@@ -14,11 +14,11 @@
     </div>
   </div>
     <div class = "postsContainer">
-    <% @posts.each do |post|%>
-      <div class = "postsAndComments">
+    <% @user.posts.each do |post|%>
+      <div class = "postsAndComments" >
         <div class= "post">
           <h2>
-            <%= link_to post.title, user_post_path(@user.id, post.id)  %>
+            <%= button_to post.title , user_post_path(@user.id , post.id), method: :get %>
           </h2>
           <p>
           <%= post.text.length > 100 ? post.text[0..100].concat('...') : post.text  %>
@@ -34,19 +34,13 @@
           </div>
         </div>
         <div class= "postComments">
-        <% if Comment.where(post_id_id: post.id).any? %>
-          <% post.recent_comments.each do |comment| %>
+          <% post.comments.each do |comment| %>
             <p>
-              <%= User.find(comment.author_id_id).name %>
+              <%= comment.author.name %>
               :
               <%= comment.text %>
             </p>
           <% end %>
-          <% else %>
-            <p>
-              No comments yet
-            </p>
-        <% end %>
         </div>
       </div>
     <% end %>

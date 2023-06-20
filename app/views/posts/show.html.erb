@@ -42,6 +42,5 @@
         </p>
     <% end %>
   </div>
-  
-    <%= button_to 'Back to all the posts', user_posts_path, method: :get, class: 'btnPosts btnMargin'%>
+  <a href="<%= user_posts_path(@user.id) %>">Back to all the posts</a>
 </div>
