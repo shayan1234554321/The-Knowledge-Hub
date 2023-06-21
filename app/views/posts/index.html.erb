@@ -2,7 +2,11 @@
 <div class= "userProfile">
   <div class= "usersContainer">
     <div class= "usersPhotoContainer">
-        <%= image_tag @user.photo , class: "usersPhoto" %>
+        <% if @user.photo.present? %>
+          <%= image_tag @user.photo , class: "usersPhoto" %>
+        <% else %>
+          <span>No Photo</span>
+        <% end %>
         </div>
         <div class="usersNameAndPost">
         <p class = "usersName">

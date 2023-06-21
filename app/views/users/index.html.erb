@@ -1,10 +1,11 @@
 <h1>List of all users</h1>
 <div class= "usersAll">
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %> 
   <div class="createPost" >
     <button onclick={changeCreatePost()} >New Post</button>
   </div>
   <div class="createPostForm" id="createPostForm">
-    <%= form_with model: Post, url: create_posts_path(user_id: @current_user.id), method: :post do |form| %>
+    <%= form_with model: Post, url: create_posts_path(user_id: current_user.id), method: :post do |form| %>
     <h2>Create a Post</h2>
       <%= form.label :title, 'Title: ' %>
       <%= form.text_field :title %>
@@ -17,7 +18,11 @@
   <% @users.each do |user| %>
     <div class= "usersContainer" onclick="redirectToUserShow(<%= user.id %>)" >
         <div class= "usersPhotoContainer">
-        <%= image_tag user.photo , class: "usersPhoto" %>
+        <% if @user.present? && @user.photo.present? %>
+              <%= image_tag @user.photo , class: "usersPhoto" %>
+          <% else %>
+              <span>No Photo</span>
+          <% end %>
         </div>
         <div class="usersNameAndPost">
           <p class = "usersName">
