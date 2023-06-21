@@ -18,7 +18,7 @@
   <% @users.each do |user| %>
     <div class= "usersContainer" onclick="redirectToUserShow(<%= user.id %>)" >
         <div class= "usersPhotoContainer">
-        <% if user.photo.present? %>
+        <% if @user.present? && @user.photo.present? %>
               <%= image_tag @user.photo , class: "usersPhoto" %>
           <% else %>
               <span>No Photo</span>
