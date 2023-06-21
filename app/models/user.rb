@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
   attr_accessor :confirmation_sent_at
+
   validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   has_many :posts, foreign_key: 'author_id_id', class_name: 'Post'
