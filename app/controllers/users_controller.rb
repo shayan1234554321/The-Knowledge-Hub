@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  load_and_authorize_resource except: :sign_out_and_redirect
 
   def index
     @users = User.all

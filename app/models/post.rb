@@ -8,6 +8,7 @@ class Post < ApplicationRecord
   has_many :likes, foreign_key: 'post_id_id', class_name: 'Like'
 
   after_save :update_posts_counter
+  after_destroy :decrement_user_post_counter
 
   def update_posts_counter
     author.update(posts_counter: author.posts_counter + 1)
@@ -15,5 +16,9 @@ class Post < ApplicationRecord
 
   def recent_comments
     comments.order(created_at: :desc).limit(5)
+  end
+
+  def decrement_user_post_counter
+    author.decrement!(:posts_counter)
   end
 end

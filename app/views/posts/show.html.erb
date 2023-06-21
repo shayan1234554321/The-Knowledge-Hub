@@ -28,18 +28,32 @@
     <% end %>
   </div>
   <div class= "postComments">
-    <% if Comment.where(post_id_id: @post.id).any? %>
-      <% Comment.where(post_id_id: @post.id).each do |comment| %>
+    <% @post.comments.each do |comment| %>
+      <div class="postComment" >
         <p>
-          <%= User.find(comment.author_id_id).name %>
+          <%= comment.author.name %>
           :
           <%= comment.text %>
         </p>
-      <% end %>
-      <% else %>
-        <p>
-          No comments yet
-        </p>
+        <% if can? :destroy, comment %>
+          <button>
+          <%= link_to 'X', destroy_user_comment_path(comment.id) , data: {
+                          turbo_method: :delete,
+                          turbo_confirm: "Are you sure?"
+                      } %>
+          </button>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class="button_holder">
+    <% if can? :destroy, @post%>
+    <button>
+        <%= link_to 'Delete post', destroy_user_post_path(@user,@post), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                } %>
+    </button>
     <% end %>
   </div>
   <a href="<%= user_posts_path(@user.id) %>">Back to all the posts</a>

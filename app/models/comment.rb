@@ -3,9 +3,14 @@ class Comment < ApplicationRecord
   belongs_to :post, class_name: 'Post', foreign_key: 'post_id_id'
 
   after_save :update_comment_counter
+  after_destroy :decrement_post_comment_counter
 
   def update_comment_counter
     post.increment!(:comments_counter)
     post.comments_counter
+  end
+
+  def decrement_post_comment_counter
+    post.decrement!(:comments_counter)
   end
 end
