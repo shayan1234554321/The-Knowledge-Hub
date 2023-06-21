@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(author_id_id: current_user.id , title: params[:post][:title],
+    @post = Post.new(author_id_id: current_user.id, title: params[:post][:title],
                      text: params[:post][:text], comments_counter: 0, likes_counter: 0)
     if @post.save
       # Successful save
