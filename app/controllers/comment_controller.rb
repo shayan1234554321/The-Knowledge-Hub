@@ -1,6 +1,6 @@
 class CommentController < ApplicationController
   def create
-    @comment = Comment.new(author_id_id: params[:user_id], post_id_id: params[:post_id],
+    @comment = Comment.new(author_id_id: current_user.id, post_id_id: params[:post_id],
                            text: params[:comment][:text])
     if @comment.save
       # Successful save

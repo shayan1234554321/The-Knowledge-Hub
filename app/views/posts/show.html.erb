@@ -18,12 +18,12 @@
       </p>
   </div>
   <div class="commentAndLike" >
-    <%= form_with model: Comment, url: create_comment_path(user_id: @current_user.id, post_id: @post.id), method: :post do |form| %>
+    <%= form_with model: Comment, url: create_comment_path(user_id: current_user.id, post_id: @post.id), method: :post do |form| %>
       <%= form.text_field :text %>
       <%= form.submit "Add Comment" %>
     <% end %>
   
-    <%= form_with model: Like, url: create_like_path(user_id: @current_user.id, post_id: @post.id), method: :post do |form| %>
+    <%= form_with model: Like, url: create_like_path(user_id: current_user.id, post_id: @post.id), method: :post do |form| %>
       <%= form.submit "Like post" %>
     <% end %>
   </div>
