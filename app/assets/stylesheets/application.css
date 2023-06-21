@@ -161,10 +161,6 @@ h1 {
   margin-bottom: 20px;
 }
 
-.loginContainer .actions input[type="submit"]:active {
-  transform: scale(0.8);
-}
-
 .signupContainer {
   display: flex;
   flex-direction: column;
@@ -184,6 +180,10 @@ h1 {
   transform: scale(1);
   transition: 0.3s ease-in-out;
   margin-bottom: 20px;
+}
+
+.loginContainer .actions input[type="submit"]:active {
+  transform: scale(0.8);
 }
 
 .signupContainer .actions input[type="submit"]:active {
