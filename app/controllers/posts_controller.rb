@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params.merge(author_id_id: current_user.id, comments_counter: 0, likes_counter: 0))
-  
+
     if @post.save
       # Successful save
       redirect_to user_post_path(current_user, @post)
@@ -40,5 +40,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :text)
   end
-
 end
