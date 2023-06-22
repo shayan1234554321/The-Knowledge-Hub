@@ -30,6 +30,11 @@
       <%= f.text_area :bio %>
     </div>
 
+    <div class="field">
+      <%= f.label :Role, class:'user_field' %><br />
+      <%= f.select :role, ['admin', 'author'], class:'user_select' %>
+    </div>
+
     <div class="actions">
       <%= f.submit "Sign up" %>
     </div>

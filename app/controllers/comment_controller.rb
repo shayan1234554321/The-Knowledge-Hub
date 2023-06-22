@@ -10,4 +10,10 @@ class CommentController < ApplicationController
       flash[:error] = 'Failed to create comment'
     end
   end
+
+  def destroy
+    @comment = Comment.find(params[:comment_id])
+    @comment.destroy
+    redirect_to request.referrer
+  end
 end
