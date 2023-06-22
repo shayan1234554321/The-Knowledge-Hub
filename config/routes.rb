@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get '/api/users/:user_id/posts', to: 'api/posts#index'
   get '/api/comments/:post_id', to: 'api/comments#index'
-  get '/api/comments/:user_id/:post_id/:text', to: 'api/comments#create'
+  post '/api/users/:user_id/posts/:post_id/comments', to: 'api/comments#create'
 
   get '/users', to: 'users#index', as: 'users'
   get '/users/:user_id', to: 'users#show', as: 'user'

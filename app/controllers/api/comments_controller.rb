@@ -1,4 +1,6 @@
 class Api::CommentsController < ActionController::Base
+  protect_from_forgery with: :null_session
+
   def index
     @comments = Comment.where(post_id_id: params[:post_id])
     render json: @comments
@@ -10,7 +12,7 @@ class Api::CommentsController < ActionController::Base
     if @user.present?
       @post = Post.find_by_id(params[:post_id])
       if @post.present?
-        @comments = @comment = Comment.new(author: @user, post: @post, text: params[:text])
+        @comment = Comment.new(author: @user, post: @post, text: params[:text])
         message = if @comment.save
                     'Comment created'
                   else
