@@ -89,6 +89,12 @@ To test the web app run the following command:
 - Twitter: [@shayan123455432](https://twitter.com/shayan123455432)
 - LinkedIn: [Shayan Khan](https://www.linkedin.com/in/shayan-khan20/)
 
+👤 **Johnie**
+
+- GitHub: [@githubhandle](https://github.com/johnie261)
+- Twitter: [@twitterhandle](https://twitter.com/njorogejohnie)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/muturijohn/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
