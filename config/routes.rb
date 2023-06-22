@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'users#index'
+
+
+  get '/api/users/:user_id/posts', to: 'api/posts#index'
+  get '/api/comments/:post_id', to: 'api/comments#index'
+  post '/api/users/:user_id/posts/:post_id/comments', to: 'api/comments#create'
+
   get '/users', to: 'users#index', as: 'users'
   get '/users/:user_id', to: 'users#show', as: 'user'
   get '/users/:user_id/posts', to: 'posts#index', as: 'user_posts'
