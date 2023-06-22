@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   load_and_authorize_resource
 
   def index
@@ -12,7 +13,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params.merge(author_id_id: current_user.id, comments_counter: 0, likes_counter: 0))
-  
+
     if @post.save
       # Successful save
       redirect_to user_post_path(current_user, @post)
@@ -41,4 +42,9 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :text)
   end
 
+  def authenticate_user!
+    return if user_signed_in?
+
+    redirect_to new_user_session_path
+  end
 end

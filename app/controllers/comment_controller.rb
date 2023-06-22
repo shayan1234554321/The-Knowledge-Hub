@@ -16,5 +16,4 @@ class CommentController < ApplicationController
     @comment.destroy
     redirect_to request.referrer
   end
-
 end
